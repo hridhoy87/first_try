@@ -3,11 +3,27 @@ body{
     padding: 0px;
     background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQrqPcRMIrsup5xmuc66diePpzmuhKB5a2KExZG-CFiRrctnihw");
 }
+a{
+    text-decoration: none;
+}
 header{
     border-bottom: 1px crimson groove;
     min-height: 50px;
     background: #000;
 }
+
+main{
+    align-content: center;
+    padding-top: 30px;
+    border: 3px groove #a4ab94;
+    padding-bottom: 30px;
+    width: 70%;
+    align-self: center;
+    margin-left: 180px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
 .styled_nav_top{
     width: 80%;
     color: #999;
@@ -16,11 +32,11 @@ header{
     padding-right: 20px;
     margin: auto;
 }
+
 .styled_nav_top a{
     color: #999;
     padding-top: 15px;
     padding-bottom: 14px;
-    text-decoration: none;
     font-size: medium;
 }
 
@@ -37,4 +53,22 @@ header{
 }
 .styled_nav_top a:hover{
     color: #ffffff;
+}
+
+main form input{
+    color: #777777;
+    border-radius: 4px;
+    padding: 10px 10px 10px 10px;
+}
+
+main form input:hover{
+    border: 2px solid yellow;
+}
+
+main form input[type="submit"]:hover{
+    width: 20%;
+}
+
+h3{
+    color: bisque;
 }
