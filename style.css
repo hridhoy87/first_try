@@ -19,8 +19,7 @@ main{
     padding-bottom: 30px;
     width: 70%;
     align-self: center;
-    margin-left: 180px;
-    margin-top: 200px;
+    margin:182px auto;
     margin-bottom: 200px;
 }
 
@@ -70,5 +69,5 @@ main form input[type="submit"]:hover{
 }
 
 h3{
-    color: bisque;
+    color: #f2ebac;
 }
