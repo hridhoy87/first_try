@@ -13,22 +13,23 @@ if( isset($_POST['giveEmail'])){
 }
 require "database.php";
 $message='';
-$giveFName=$_POST['giveFName'];
-$giveLName=$_POST['giveLName'];
-$givePass=$_POST['givePass'];
-$giveEmail=$_POST['giveEmail'];
+//$giveFName=$_POST['giveFName'];
+//$giveLName=$_POST['giveLName'];
+//$givePass=$_POST['givePass'];
+//$giveEmail=$_POST['giveEmail'];
 
 if(!empty($_POST['giveEmail']) && !empty($_POST['givePass']) && ($_POST['givePass']==$_POST['reGivePass']) ){
 
     // Enter the new user in the database
-    $sql = "INSERT INTO `info` (`id`, `fName`, `lName`, `password`, `email`, `time`) VALUES (NULL, :giveFName, :giveLName, :givePass, :giveEmail ,CURRENT_TIMESTAMP);";
-
-    //(NULL,'.$_POST['giveFName'].','.$_POST['giveLName'].','.$_POST['givePass'].','.$_POST['giveEmail'].',' CURRENT_TIMESTAMP);
+    $sql = "INSERT INTO info (fName, lName, password, email, time) VALUES (:giveFName, :giveLName, :givePass, :giveEmail ,CURRENT_TIMESTAMP);";
     $statement = $con->prepare($sql);
-    $statement->bind_param(':giveFName',$_POST['giveFName']);
-    $statement->bind_param(':giveLName',$_POST['giveLName']);
-    $statement->bind_param(':givePass',$_POST['givePass']);
-    $statement->bind_param(':giveEmail',$_POST['giveEmail']);
+    //$stmt->bindParam(':email', $_POST['email']);
+    $statement->bindParam(':giveFName',$_POST['giveFName']);
+    $statement->bindParam(':giveLName',$_POST['giveLName']);
+    $statement->bindParam(':givePass',md5($_POST['givePass']));
+    $statement->bindParam(':giveEmail',$_POST['giveEmail']);
+
+    //var_dump($statement);
 
     try{
         $statement->execute();
